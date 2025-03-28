@@ -1,6 +1,8 @@
 import 'package:animals_app/features/home/presentation/ui/widgets/grid_view_item.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../details/presentation/ui/details_screen.dart';
+
 class HomeGridView extends StatelessWidget {
   const HomeGridView({super.key});
 
@@ -15,7 +17,16 @@ class HomeGridView extends StatelessWidget {
       ),
       itemCount: 5,
       itemBuilder: (context, index) {
-        return GridViewItem();
+        return GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const DetailsScreen(),
+              ),
+            );
+          },
+          child: GridViewItem());
       },
     );
   }
