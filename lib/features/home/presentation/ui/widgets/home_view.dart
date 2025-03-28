@@ -67,6 +67,28 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
           ],
         ),
       ),
+
+      bottomNavigationBar: BottomNavigationBar(
+        unselectedItemColor: Color(0XFF787878),
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Favorites',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications),
+            label: 'Favorites',
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        ],
+        currentIndex: 0,
+        selectedItemColor: Color(0xffBEDE61),
+        type: BottomNavigationBarType.fixed,
+        onTap: (index) {
+          // Handle bottom navigation tap
+        },
+      ),
     );
   }
 
