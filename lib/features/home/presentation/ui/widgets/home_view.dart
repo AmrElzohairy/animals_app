@@ -72,7 +72,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
 
   Widget _buildTabContent(String content) {
     return ListView.builder(
-      itemCount: 15,
+      itemCount: 5,
       itemBuilder: (context, index) {
         return ListTile(title: Text("$content - Item ${index + 1}"));
       },
