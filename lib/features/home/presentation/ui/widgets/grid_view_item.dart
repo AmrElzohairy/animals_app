@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../../../data/models/grid_items_model.dart';
+
 class GridViewItem extends StatelessWidget {
-  const GridViewItem({super.key});
+  const GridViewItem({super.key, required this.gridItemsModel});
+final GridItemsModel gridItemsModel;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +36,7 @@ class GridViewItem extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(16.34),
             child: Image.asset(
-              "assets/animal1.jpeg",
+              gridItemsModel.imageUrl,
               height: MediaQuery.sizeOf(context).height * 0.2,
               width: MediaQuery.sizeOf(context).width * 0.45,
               fit: BoxFit.cover,
@@ -41,7 +44,7 @@ class GridViewItem extends StatelessWidget {
           ),
           Spacer(),
           Text(
-            'The 12 most intriguing \nanimal discoveries of 2025',
+            gridItemsModel.title,
             style: TextStyle(
               color: Colors.white,
               fontSize: 14,

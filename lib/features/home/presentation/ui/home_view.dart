@@ -3,6 +3,8 @@ import 'package:animals_app/features/home/presentation/ui/widgets/home_grid_view
 import 'package:animals_app/features/home/presentation/ui/widgets/home_header.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../constants.dart';
+
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
@@ -62,7 +64,9 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
           children: [
             Padding(
               padding: const EdgeInsets.only(bottom: 20, ),
-              child: HomeGridView(),
+              child: HomeGridView(
+                gridItems: animalList,
+              ),
             ),
             Center(child: Text("Science")),
             Center(child: Text("Environment")),
