@@ -32,6 +32,8 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
             SliverToBoxAdapter(child: SafeArea(child: HomeHeader())),
             SliverToBoxAdapter(child: HomeCarosalSlider()),
             SliverAppBar(
+              shadowColor: Colors.transparent,
+              backgroundColor: Colors.black,
               automaticallyImplyLeading: false,
               floating: false,
               pinned: true,
