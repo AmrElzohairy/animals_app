@@ -1,5 +1,5 @@
-import 'package:animals_app/features/onboarding/home/presentation/ui/widgets/home_carosal_slider.dart';
-import 'package:animals_app/features/onboarding/home/presentation/ui/widgets/home_header.dart';
+import 'package:animals_app/features/home/presentation/ui/widgets/home_carosal_slider.dart';
+import 'package:animals_app/features/home/presentation/ui/widgets/home_header.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatefulWidget {

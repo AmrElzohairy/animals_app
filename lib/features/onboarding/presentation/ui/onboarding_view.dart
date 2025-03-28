@@ -1,4 +1,4 @@
-import 'package:animals_app/features/onboarding/home/presentation/ui/widgets/home_view.dart';
+import 'package:animals_app/features/home/presentation/ui/widgets/home_view.dart';
 import 'package:flutter/material.dart';
 
 class OnBoarding extends StatelessWidget {
