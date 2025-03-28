@@ -14,7 +14,13 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this); // Number of tabs
+    _tabController = TabController(length: 4, vsync: this); // Number of tabs
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
   }
 
   @override
@@ -32,10 +38,16 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
               flexibleSpace: FlexibleSpaceBar(
                 background: TabBar(
                   controller: _tabController,
+                  indicatorColor: Colors.yellowAccent,
+                  labelColor: Colors.white,
+                  overlayColor: WidgetStateProperty.all(Colors.transparent),
+                  unselectedLabelColor: Colors.white,
+                  labelStyle: TextStyle(fontSize: 12),
                   tabs: [
-                    Tab(text: "Tab 1"),
-                    Tab(text: "Tab 2"),
-                    Tab(text: "Tab 3"),
+                    Tab(text: "Animals"),
+                    Tab(text: "Science"),
+                    Tab(text: "Environment"),
+                    Tab(text: "Travel"),
                   ],
                 ),
               ),
@@ -44,10 +56,12 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
         },
         body: TabBarView(
           controller: _tabController,
+
           children: [
             _buildTabContent("Content for Tab 1"),
             _buildTabContent("Content for Tab 2"),
             _buildTabContent("Content for Tab 3"),
+            _buildTabContent("Content for Tab 4"),
           ],
         ),
       ),
@@ -56,7 +70,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
 
   Widget _buildTabContent(String content) {
     return ListView.builder(
-      itemCount: 50,
+      itemCount: 15,
       itemBuilder: (context, index) {
         return ListTile(title: Text("$content - Item ${index + 1}"));
       },
