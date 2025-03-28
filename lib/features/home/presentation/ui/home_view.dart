@@ -1,4 +1,5 @@
 import 'package:animals_app/features/home/presentation/ui/widgets/home_carosal_slider.dart';
+import 'package:animals_app/features/home/presentation/ui/widgets/home_grid_view.dart';
 import 'package:animals_app/features/home/presentation/ui/widgets/home_header.dart';
 import 'package:flutter/material.dart';
 
@@ -58,12 +59,14 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
         },
         body: TabBarView(
           controller: _tabController,
-
           children: [
-            _buildTabContent("Content for Tab 1"),
-            _buildTabContent("Content for Tab 2"),
-            _buildTabContent("Content for Tab 3"),
-            _buildTabContent("Content for Tab 4"),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20, ),
+              child: HomeGridView(),
+            ),
+            Center(child: Text("Science")),
+            Center(child: Text("Environment")),
+            Center(child: Text("Travel")),
           ],
         ),
       ),
@@ -89,15 +92,6 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
           // Handle bottom navigation tap
         },
       ),
-    );
-  }
-
-  Widget _buildTabContent(String content) {
-    return ListView.builder(
-      itemCount: 5,
-      itemBuilder: (context, index) {
-        return ListTile(title: Text("$content - Item ${index + 1}"));
-      },
     );
   }
 }

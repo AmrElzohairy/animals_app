@@ -1,5 +1,6 @@
-import 'package:animals_app/features/home/presentation/ui/widgets/home_view.dart';
 import 'package:flutter/material.dart';
+
+import '../../../home/presentation/ui/home_view.dart';
 
 class OnBoarding extends StatelessWidget {
   const OnBoarding({super.key});
@@ -57,7 +58,7 @@ class OnBoarding extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const HomeView()),
+                    MaterialPageRoute(builder: (context) =>  HomeView()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
