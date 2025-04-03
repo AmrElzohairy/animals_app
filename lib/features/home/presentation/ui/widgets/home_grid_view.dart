@@ -16,7 +16,7 @@ class HomeGridView extends StatelessWidget {
         crossAxisSpacing: 10,
         mainAxisSpacing: 30,
       ),
-      itemCount: 4,
+      itemCount: gridItems.length,
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {

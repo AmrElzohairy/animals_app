@@ -4,7 +4,7 @@ import '../../../data/models/grid_items_model.dart';
 
 class GridViewItem extends StatelessWidget {
   const GridViewItem({super.key, required this.gridItemsModel});
-final GridItemsModel gridItemsModel;
+  final GridItemsModel gridItemsModel;
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +19,13 @@ final GridItemsModel gridItemsModel;
           BoxShadow(
             color: Colors.greenAccent.withValues(alpha: 0.2),
             blurRadius: 9.63,
-            offset: Offset(0, 12.04),
+            offset: Offset(0, 0.04),
             spreadRadius: 0,
           ),
           BoxShadow(
             color: Color(0x1181D8F1),
             blurRadius: 76.91,
-            offset: Offset(0, 96.14),
+            offset: Offset(0, 50.14),
             spreadRadius: 0,
           ),
         ],
