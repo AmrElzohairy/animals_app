@@ -68,9 +68,24 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                 gridItems: animalList,
               ),
             ),
-            Center(child: Text("Science")),
-            Center(child: Text("Environment")),
-            Center(child: Text("Travel")),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: HomeGridView(
+                gridItems: scienceList,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: HomeGridView(
+                gridItems: envList,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: HomeGridView(
+                gridItems: travelList,
+              ),
+            ),
           ],
         ),
       ),

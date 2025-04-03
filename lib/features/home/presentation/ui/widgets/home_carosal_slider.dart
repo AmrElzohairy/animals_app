@@ -3,6 +3,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../constants.dart';
+
 class HomeCarosalSlider extends StatefulWidget {
   const HomeCarosalSlider({super.key});
 
@@ -13,12 +15,7 @@ class HomeCarosalSlider extends StatefulWidget {
 class _HomeCarosalSliderState extends State<HomeCarosalSlider> {
   late CarouselSliderController _carouselController;
   int currentIndex = 0;
-  final List<String> animals = const [
-    'assets/animal1.jpeg',
-    'assets/animal2.jpeg',
-    'assets/animal3.jpeg',
-    "assets/carosal_image.png",
-  ];
+
   @override
   void initState() {
     super.initState();
@@ -37,10 +34,10 @@ class _HomeCarosalSliderState extends State<HomeCarosalSlider> {
         CarouselSlider(
           carouselController: _carouselController,
           items:
-              animals.map((animal) {
+              carosalSliderList.map((item) {
                 return Builder(
                   builder: (BuildContext context) {
-                    return HomeCarosalItem(image: animal);
+                    return HomeCarosalItem(image: item.imageUrl , text: item.title);
                   },
                 );
               }).toList(),
@@ -68,7 +65,7 @@ class _HomeCarosalSliderState extends State<HomeCarosalSlider> {
           bottom: 10,
           left: MediaQuery.of(context).size.width / 2 - 32,
           child: DotsIndicator(
-            dotsCount: animals.length,
+            dotsCount: carosalSliderList.length,
             position: currentIndex.toDouble(),
             decorator: DotsDecorator(
               size: const Size(10.0, 10.0),
