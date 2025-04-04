@@ -22,7 +22,9 @@ class HomeGridView extends StatelessWidget {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const DetailsScreen()),
+              MaterialPageRoute(builder: (context) =>  DetailsScreen(
+                gridItemsModel: gridItems[index],
+              )),
             );
           },
           child: GridViewItem(gridItemsModel: gridItems[index]),

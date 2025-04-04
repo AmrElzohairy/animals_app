@@ -1,8 +1,9 @@
+import 'package:animals_app/features/home/data/models/grid_items_model.dart';
 import 'package:flutter/material.dart';
 
 class DetailsScreen extends StatelessWidget {
-  const DetailsScreen({super.key});
-
+  const DetailsScreen({super.key, required this.gridItemsModel});
+  final GridItemsModel gridItemsModel;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +14,7 @@ class DetailsScreen extends StatelessWidget {
               child: Stack(
                 children: [
                   Image.asset(
-                    "assets/animal1.jpeg",
+                    gridItemsModel.imageUrl,
                     fit: BoxFit.cover,
                     height: MediaQuery.sizeOf(context).height * 0.45,
                     width: double.infinity,
@@ -44,7 +45,7 @@ class DetailsScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Snake have friends too',
+                              gridItemsModel.title,
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 23.07,
@@ -125,13 +126,12 @@ class DetailsScreen extends StatelessWidget {
                       ),
                     ),
                     child: Text(
-                      'Most of us likely consider snakes to be cold, solitary beings, as indifferent to others of their kind as they are to us. \n\nBut those notions are wrong—especially when it comes to garter snakes, a new study says.snakes they hang out with—in other words, they have friends. ' *
-                          10,
-                      textAlign: TextAlign.justify,
+                      gridItemsModel.description * 20,
+                      textAlign: TextAlign.start,
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
                         height: 1.50,
                       ),
                     ),
